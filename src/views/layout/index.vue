@@ -12,7 +12,7 @@
                             <el-icon :size="20" color="#fff">
                                 <HomeFilled />
                             </el-icon>
-                            <div>首页</div>
+                            <div>首页1</div>
                         </li>
                         <li>
                             <el-icon :size="20">
