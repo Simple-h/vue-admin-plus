@@ -1,7 +1,8 @@
 <template>
     <el-container class="layout-container-box" style="height: 100%">
+        <!-- 左侧导航栏组件 -->
         <el-aside width="266px">
-
+            <!-- 1级导航栏 -->
             <div class="first-navigation">
                 <div class="first-navigation-logo">
                     <img src="~@/assets/vue.svg" alt="">
@@ -59,6 +60,7 @@
                     </ul>
                 </div>
             </div>
+            <!-- 2级导航栏 -->
             <div class="second-navigation">
                 <div class="second-navigation-title">
                     <h1>Vue Admin Plus</h1>
@@ -71,7 +73,7 @@
                                 <template #title>
                                     <el-icon>
                                         <message />
-                                    </el-icon>Navigator One
+                                    </el-icon>首页
                                 </template>
                                 <el-menu-item-group>
                                     <template #title>Group 1</template>
@@ -88,7 +90,7 @@
                             </el-sub-menu>
                             <el-sub-menu index="2">
                                 <template #title>
-                                    <el-icon><icon-menu /></el-icon>Navigator Two
+                                    <el-icon><icon-menu /></el-icon>看板
                                 </template>
                                 <el-menu-item-group>
                                     <template #title>Group 1</template>
@@ -107,7 +109,7 @@
                                 <template #title>
                                     <el-icon>
                                         <setting />
-                                    </el-icon>Navigator Three
+                                    </el-icon>工作台
                                 </template>
                                 <el-menu-item-group>
                                     <template #title>Group 1</template>
@@ -127,9 +129,33 @@
                 </div>
             </div>
         </el-aside>
-
+        <!-- 顶部组件 -->
         <el-container>
             <el-header style="text-align: right; font-size: 12px">
+
+                <div class="header-top">
+                    <div class="isopen-btn">
+                        <el-icon size="18">
+                            <Fold />
+                        </el-icon>
+                        <!-- <el-icon size="20"><Expand /></el-icon> -->
+                    </div>
+                    <div class="nav-top">
+                        <el-breadcrumb :separator-icon="ArrowRight">
+                            <el-breadcrumb-item :to="{ path: '/' }">导航1</el-breadcrumb-item>
+                            <el-breadcrumb-item>导航2</el-breadcrumb-item>
+                            <el-breadcrumb-item>导航3</el-breadcrumb-item>
+                            <el-breadcrumb-item>导航4</el-breadcrumb-item>
+                        </el-breadcrumb>
+                    </div>
+                    <!-- 用户导航栏 -->
+                    <div class="user-nav">
+
+                    </div>
+                </div>
+                <div class="header-content">
+
+                </div>
                 <div class="toolbar">
                     <el-dropdown>
                         <el-icon style="margin-right: 8px; margin-top: 1px">
@@ -146,7 +172,7 @@
                     <span>Tom</span>
                 </div>
             </el-header>
-
+            <!-- 内容区域 -->
             <el-main>
                 <el-scrollbar>
                     <el-table :data="tableData">
@@ -163,6 +189,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Menu as IconMenu, Message, Setting } from '@element-plus/icons-vue'
+import { ArrowRight } from '@element-plus/icons-vue'
 
 const item = {
     date: '2016-05-02',
@@ -213,23 +240,28 @@ const tableData = ref(Array.from({ length: 10 }).fill(item))
     }
 
     .second-navigation {
+        width: 180px;
         float: left;
-        .second-navigation-title{
+        padding: 0px 10px;
+
+        .second-navigation-title {
             padding-top: 20px;
             height: 40px;
             position: relative;
             border-bottom: 1px solid #ccc;
-            >h1{
-               
+
+            >h1 {
+
                 text-align: center;
                 font-size: 20px;
                 height: 20px;
                 line-height: 20px;
             }
-            >span{
+
+            >span {
                 position: absolute;
                 bottom: -7px;
-                left: 62px;
+                left: 56px;
                 width: 68px;
                 background-color: #fff;
                 text-align: center;
@@ -238,6 +270,25 @@ const tableData = ref(Array.from({ length: 10 }).fill(item))
                 line-height: 14px;
                 z-index: 99;
             }
+        }
+
+        .second-navigation-content {
+            margin-top: 20px;
+        }
+    }
+
+    .header-top {
+        position: relative;
+        height: 60px;
+
+        .isopen-btn{
+            position: absolute;
+            top: 23px;
+        }
+        .nav-top {
+            position: absolute;
+            top: 25px;
+            left: 40px;
         }
     }
 }
