@@ -132,22 +132,33 @@
         <!-- 顶部组件 -->
         <el-container>
             <el-header style="text-align: right; font-size: 12px">
-
                 <div class="header-top">
+                    <!-- 左侧导航栏开关 -->
                     <div class="isopen-btn">
                         <el-icon size="18">
                             <Fold />
                         </el-icon>
                         <!-- <el-icon size="20"><Expand /></el-icon> -->
                     </div>
-                    <div class="nav-top">
+                    <!-- 组件标题 -->
+                    <div class="component-title">
+                        <span>
+                            <el-icon size="18">
+                                <HomeFilled />
+                            </el-icon>
+                        </span>
+                        <span>首页</span>
+                        
+                    </div>
+                    <!-- 组件面包蟹导航 -->
+                    <!-- <div class="nav-top">
                         <el-breadcrumb :separator-icon="ArrowRight">
                             <el-breadcrumb-item :to="{ path: '/' }">导航1</el-breadcrumb-item>
                             <el-breadcrumb-item>导航2</el-breadcrumb-item>
                             <el-breadcrumb-item>导航3</el-breadcrumb-item>
                             <el-breadcrumb-item>导航4</el-breadcrumb-item>
                         </el-breadcrumb>
-                    </div>
+                    </div> -->
                     <!-- 用户导航栏 -->
                     <div class="user-nav">
 
@@ -280,11 +291,12 @@ const tableData = ref(Array.from({ length: 10 }).fill(item))
         position: relative;
         height: 60px;
 
-        .isopen-btn{
+        .isopen-btn {
             position: absolute;
             top: 23px;
         }
-        .nav-top {
+
+        .component-title {
             position: absolute;
             top: 25px;
             left: 40px;
