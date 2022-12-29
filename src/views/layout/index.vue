@@ -182,7 +182,7 @@
                     <span>Tom</span>
                 </div>
             </el-header>
-            <!-- 内容区域  -->
+            <!-- 内容区域 -->
             <el-main>
                 <el-scrollbar>
                     <el-table :data="tableData">
