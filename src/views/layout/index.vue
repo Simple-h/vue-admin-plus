@@ -147,7 +147,7 @@
                                 <HomeFilled />
                             </el-icon>
                         </span>
-                        <span>首页 </span>
+                        <span>首页</span>
                         
                     </div>
                     <!-- 组件面包蟹导航 -->
